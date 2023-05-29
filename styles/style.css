@@ -3,7 +3,7 @@ body {
     padding: 0px;
 }
 
-.page {
+.landing_page {
     display: flex;
     flex-flow: row wrap;
 
@@ -13,13 +13,20 @@ body {
 
 .logo_container {
     width: 70%;
-    background-color: #A4E5D9;
+    background-color: #a4e5d9;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .login_container {
     width: 30%;
+
+    
 }
 
+/*
 .login_container input {
     position: absolute;
     width: 384px;
@@ -30,3 +37,5 @@ body {
     background: #FFFFFF;
     border-radius: 16px;
 }
+*/
+

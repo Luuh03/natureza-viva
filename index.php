@@ -6,20 +6,22 @@
     <body>
 
 
-    <div class="page">
+    <div class="landing_page">
         <div class="logo_container">
-            <img src="./images/landing_page_image.png" alt="logo">
+            <img src="./images/logo_landing.png" alt="logo">
         </div>
 
         <div class="login_container">
-            <form  action="">
-                <p>Login:</p>
-                <input type="text">
-                <p>Senha:</p>
-                <input type="text">
+            <div class="form">
+                <form  action="">
+                    <p>Login:</p>
+                    <input type="text">
+                    <p>Senha:</p>
+                    <input type="text">
 
-                <input type="submit" id="button">
-            </form>
+                    <input type="submit" id="button">
+                </form>
+            </div>
         </div>
     </div>
 
