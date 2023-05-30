@@ -29,7 +29,7 @@
                         Iniciar sessão
                     </button>
                 </form>
-                <h3>Não possui uma conta ainda?<br>
+                <h3>Não possui conta ainda?<br>
                 <a href="">Clique aqui para se cadastrar.</a></h3>
                 </center>
             </div>
