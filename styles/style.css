@@ -106,20 +106,24 @@ html {
 }
 
 .texto_cadastro h1 {
-font-style: normal;
-font-weight: 600;
-font-size: 44px;
-line-height: 53px;
-text-transform: uppercase;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 44px;
+    line-height: 53px;
+    text-transform: uppercase;
 
-color: #005847;
+    color: #005847;
 }
 
 .texto_cadastro p{
-font-style: normal;
-font-weight: 300;
-font-size: 32px;
-line-height: 39px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 39px;
 
-color: #005847;
+    color: #005847;
+}
+
+@media only screen and (max-device-width : 768px) {
+    
 }
