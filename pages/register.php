@@ -19,17 +19,21 @@
             <div class="form_box">
 
                 <form method="" action="">
+                    <p>Nome:</p>
+                    <input type="text" required>
                     <p>Login:</p>
                     <input type="text" required>
                     <p>Senha:</p>
                     <input type="password" required>
+                    <p>Confirmar senha:</p>
+                    <input type="password" required>
 
                     <center>
                     <button type="submit">
-                        Iniciar sessão
+                        Cadastrar
                     </button>
                 </form>
-                <h3>Não possui uma conta ainda?<br>
+                <h3>Já possui uma conta?<br>
                 <a href="">Clique aqui para se cadastrar.</a></h3>
                 </center>
             </div>
