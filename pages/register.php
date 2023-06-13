@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,15 +18,15 @@
         </div>
 
         <div class="form_container">
-                <form method="" action="" id="register">
+                <form method="post" action="" id="register">
                     <p>Nome:</p>
-                    <input type="text" required>
+                    <input type="text" name="nome" required>
                     <p>Login:</p>
-                    <input type="text" required>
+                    <input type="text" name="login" required>
                     <p>Senha:</p>
-                    <input type="password" required>
+                    <input type="password" name="senha" required>
                     <p>Confirmar senha:</p>
-                    <input type="password" required>
+                    <input type="password" name="senhaConfirmacao" required>
 
                     <center>
                     <button type="submit">

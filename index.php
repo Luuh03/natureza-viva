@@ -19,9 +19,9 @@
 
                 <form method="" action="">
                     <p>Login:</p>
-                    <input type="text" required>
+                    <input type="text" name="login" required>
                     <p>Senha:</p>
-                    <input type="password" required>
+                    <input type="password" name="senha" required>
 
                     <center>
                     <button type="submit">
