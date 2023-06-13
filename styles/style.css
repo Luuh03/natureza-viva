@@ -30,7 +30,7 @@ html {
     height: 251px;
 }
 
-.login_container {
+.form_container {
     width: 30%;
 
     background-color: #6DD6C2;
@@ -39,21 +39,21 @@ html {
     align-items: center;
 }
 
-.login_container .form_box {
+.form_container form {
     margin-right: auto;
     margin-left: auto;
 
     margin-top: 200px;
 }
 
-.login_container .form_box p {
+.form_container form p {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 10px;
     margin-top: 30px;
 }
 
-.login_container .form_box input {
+.form_container form input {
     width: 256px;
     height: 42px;
     padding: 0px 5px;
@@ -65,7 +65,7 @@ html {
     font-size: 20px;
 }
 
-.login_container .form_box button {
+.form_container form button {
     width: 192px;
     height: 58px;
 
@@ -85,23 +85,23 @@ html {
     cursor: pointer;
 }
 
-.login_container .form_box button:hover {
+.form_container form button:hover {
     background-color: #02896F;
 }
 
-.login_container .form_box h3 {
+.form_container form h3 {
     font-size: 18px;
     font-weight: 400;
 }
 
-.login_container .form_box a {
+.form_container form a {
     text-decoration: none;
     font-weight: 500;
     color: #02896F;
     transition: all 0.15s;
 }
 
-.login_container .form_box a:hover {
+.form_container form a:hover {
     color: #005847;
 }
 

@@ -15,8 +15,7 @@
             <img src="./images/logo_landing.png" alt="logo">
         </div>
 
-        <div class="login_container">
-            <div class="form_box">
+        <div class="form_container">
 
                 <form method="" action="">
                     <p>Login:</p>
@@ -32,7 +31,6 @@
                 <h3>Não possui uma conta ainda?<br>
                 <a href="./pages/register.php">Clique aqui para se cadastrar.</a></h3>
                 </center>
-            </div>
         </div>
     </div>
 
