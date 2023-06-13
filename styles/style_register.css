@@ -1,3 +1,42 @@
 #register {
     margin-top: 0px;
 }
+
+.content_container {
+    width: 70%;
+    background-color: #a4e5d9;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content_container img {
+    width: 470px;
+    height: 380px;
+}
+
+.content_container h1 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 44px;
+    line-height: 53px;
+    text-transform: uppercase;
+
+    color: #005847;
+}
+
+.content_container p{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 39px;
+
+    color: #005847;
+}
+
+.content_container table{
+    width: 90%;
+}

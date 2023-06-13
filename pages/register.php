@@ -12,8 +12,17 @@
 
 
     <div class="landing_page">
-        <div class="logo_container">
-            <img src="../images/logo_landing.png" alt="logo">
+        <div class="content_container">
+            <table>
+                <tr>
+                    <td colspan="2"><h1>Faça parte da ONG Natureza Viva</h1></td>
+                </tr>
+                <tr>
+                    <td><p>O meio ambiente nos abraça desde o berço, é hora de o abraçarmos também. Cultivar amor pela terra que nos permite respirar, pelo verde da esperança, criar uma relação de mutualismo e sermos o nosso melhor juntos.</p></td>
+                    <td><img src="../images/Cadastro.png" alt="Imagem com 4 ícones da cabeça aos ombros de pessoas negras, loira e asiática. Os ícones fazem um tipo de cruz, dois na vertical e dois na horizontal."></td>
+                </tr>
+            </table>
+            
         </div>
 
         <div class="form_container">
