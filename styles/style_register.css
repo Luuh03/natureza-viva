@@ -28,6 +28,8 @@
 }
 
 .content_container p{
+    margin: 0px;
+
     font-family: 'Inter';
     font-style: normal;
     font-weight: 300;
