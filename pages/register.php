@@ -1,3 +1,34 @@
+<?php
+    function registrar(){
+        include "../scripts/connection.php";
+
+        $nome = $_POST["nome"];
+        $login = $_POST["login"];
+        $senha = $_POST["senha"];
+        $senhaConfirmacao = $_POST["senhaConfirmacao"];
+
+        if($senha == $senhaConfirmacao) {
+            $senha = base64_encode($senha);
+
+            $sql = "INSERT INTO usuarios (nome, login, senha) VALUES";
+            $sql.= "('$nome', '$login', '$senha')";
+
+            $resultado = mysqli_query($conexao, $sql); 
+
+            $newURL = "./index";
+            header("Location: .$newURL.php");
+
+            die();
+        } else {
+
+            header("Refresh: 0");
+            echo '<script type="text/javascript">
+                window.onload = function () { alert("As senhas são diferentes!"); } 
+            </script>'; 
+
+        }
+    }
+    if(empty($_POST["nome"])){  ?>
 
 <!DOCTYPE html>
 <html>
@@ -12,22 +43,22 @@
     <body>
 
 
-    <div class="landing_page">
-        <div class="content_container">
-            <table>
-                <tr>
-                    <td colspan="2"><h1>Faça parte da ONG Natureza Viva</h1></td>
-                </tr>
-                <tr>
-                    <td><p>O meio ambiente nos abraça desde o berço, é hora de o abraçarmos também. Cultivar amor pela terra que nos permite respirar, pelo verde da esperança, criar uma relação de mutualismo e sermos o nosso melhor juntos.</p></td>
-                    <td><img src="../images/Cadastro.png" alt="Imagem com 4 ícones da cabeça aos ombros de pessoas negras, loira e asiática. Os ícones fazem um tipo de cruz, dois na vertical e dois na horizontal."></td>
-                </tr>
-            </table>
-            
-        </div>
+        <div class="landing_page">
+            <div class="content_container">
+                <table>
+                    <tr>
+                        <td colspan="2"><h1>Faça parte da ONG Natureza Viva</h1></td>
+                    </tr>
+                    <tr>
+                        <td><p>O meio ambiente nos abraça desde o berço, é hora de o abraçarmos também. Cultivar amor pela terra que nos permite respirar, pelo verde da esperança, criar uma relação de mutualismo e sermos o nosso melhor juntos.</p></td>
+                        <td><img src="../images/Cadastro.png" alt="Imagem com 4 ícones da cabeça aos ombros de pessoas negras, loira e asiática. Os ícones fazem um tipo de cruz, dois na vertical e dois na horizontal."></td>
+                    </tr>
+                </table>
+                
+            </div>
 
-        <div class="form_container">
-                <form method="post" action="" id="register">
+            <div class="form_container">
+                <form method="post" id="register">
                     <p>Nome:</p>
                     <input type="text" name="nome" required>
                     <p>Login:</p>
@@ -45,11 +76,12 @@
                 <h3>Já possui uma conta?<br>
                 <a href="../index.php">Clique aqui para fazer o login.</a></h3>
                 </center>
+            </div>
         </div>
-    </div>
-
-        
-    
-
+        <?php
+            } else { 
+            registrar();
+            } 
+        ?>
     </body>
 </html>
