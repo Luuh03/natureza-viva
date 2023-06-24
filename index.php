@@ -1,3 +1,20 @@
+<?php
+    function login() {
+        include "./scripts/connection.php";
+
+        $login = $_POST["login"];
+        $senha = $_POST["senha"];
+
+        $senha = base64_encode($senha);
+
+        $sql = "SELECT * FROM usuarios WHERE login = '$login' AND senha = '$senha'";
+
+        $resultado = mysqli_query($conexao, $sql); 
+        $num_linhas = mysqli_num_rows($resultado);
+
+        echo $num_linhas;
+    }
+    if(empty($_POST["login"])){  ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,7 +34,7 @@
 
         <div class="form_container">
 
-                <form method="" action="">
+                <form method="post">
                     <p>Login:</p>
                     <input type="text" name="login" required>
                     <p>Senha:</p>
@@ -33,9 +50,10 @@
                 </center>
         </div>
     </div>
-
-        
-    
-
+    <?php
+            } else { 
+            login();
+            } 
+        ?>
     </body>
 </html>
