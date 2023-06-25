@@ -38,13 +38,14 @@
                         <td>Dia e Horário>
                     </tr>
                     <tr>
-                        <td>Alugado por</td>
+                        <td>Alugado por:</td>
+                        <td id="botao1"><a id="confirmar">Confirmar</a></td>
                     </tr>
-                </table> 
+                </table>
             </div>
 
             <h2>Agendamentos em aberto:</h2>
-            
+
             <div class="box">
                 <table>
                     <tr>
@@ -55,10 +56,15 @@
                         <td>Dia e Horário>
                     </tr>
                     <tr>
-                        <td>Alugado por</td>
+                        <td>Alugado por:</td>
                     </tr>
-                </table> 
+                    <tr>
+                        <td id="botao2"><a id="abrir">Abrir Ocorrência</a></td>
+                        <td id="botao2"><a id=confirmar>Fechar Aluguel</a></td>
+                    </tr>
+                </table>      
             </div>
+            <br>
         </main>
     </body>
 
