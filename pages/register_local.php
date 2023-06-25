@@ -28,27 +28,27 @@
 
         <div class="container">
 
-            <div class="box">
-                <p>Aaaaaaaaa</p><br>
-                <p>Bbbbbbbbbb</p>
-            </div>
+            <form method="post">
+                <label>Tipo:</label>
+                <input type="text" name="tipo" required><br>
+                <label>Nome do espaço:</label>
+                <input type="text" name="nomeespaco" required><br>
+                <label>Cidade:</label>
+                <input type="text" name="cidade" required><br>
+                <label>Bairro:</label>
+                <input type="text" name="bairro" required><br>
+                <label>Rua:</label>
+                <input type="text" name="rua" required><br>
+                <label>Número:</label>
+                <input type="text" name="numero" required>
 
-            <div class="box2">
-
-                <form method="post">
-                    <input type="text" name="tipo" required><br>
-                    <input type="text" name="nomeespaco" required><br>
-                    <input type="text" name="cidade" required><br>
-                    <input type="text" name="bairro" required><br>
-                    <input type="text" name="rua" required><br>
-                    <input type="text" name="numero" required><br>
-
-            <center>
-                <button type="submit">
-                    Cadastrar
-                </button>
-            </div>
+                <center>
+                    <button type="submit">
+                        Iniciar sessão
+                    </button>
+            </form>
         </div>
+
     </main>
 </body>
 
