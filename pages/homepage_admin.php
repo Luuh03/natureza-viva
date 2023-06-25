@@ -35,7 +35,7 @@
                         <td> Rua:</td>
                     </tr>
                     <tr>
-                        <td>Dia e Horário>
+                        <td>Dia e Horário</td>
                     </tr>
                     <tr>
                         <td>Alugado por:</td>
@@ -53,7 +53,7 @@
                         <td> Rua:</td>
                     </tr>
                     <tr>
-                        <td>Dia e Horário>
+                        <td>Dia e Horário</td>
                     </tr>
                     <tr>
                         <td>Alugado por:</td>
