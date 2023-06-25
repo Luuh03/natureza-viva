@@ -4,7 +4,7 @@
 <head>
     <title></title>
     <link type="text/css" rel="stylesheet" href="../styles/style.css" />
-    <link type="text/css" rel="stylesheet" href="../styles/style_register_local.css" />
+    <link type="text/css" rel="stylesheet" href="../styles/style_register_time.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -29,22 +29,15 @@
         <div class="container">
 
             <form method="post">
-                <label>Tipo:</label>
+                <h2>Espaço salão de festa:</h2>
+                <label>Data:</label>
                 <input type="text" name="tipo" required><br>
-                <label>Nome do espaço:</label>
+                <label>Hora:</label>
                 <input type="text" name="nomeespaco" required><br>
-                <label>Cidade:</label>
-                <input type="text" name="cidade" required><br>
-                <label>Bairro:</label>
-                <input type="text" name="bairro" required><br>
-                <label>Rua:</label>
-                <input type="text" name="rua" required><br>
-                <label>Número:</label>
-                <input type="text" name="numero" required>
 
                 <center>
                     <button type="submit">
-                        Iniciar sessão
+                        Cadastrar
                     </button>
             </form>
         </div>

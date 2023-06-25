@@ -42,3 +42,42 @@
 .content_container table{
     width: 90%;
 }
+
+@media only screen and (max-device-width : 767px) {
+    #register {
+        margin-top: 0px;
+    }
+    
+    .content_container {
+        width: 100%;
+        background-color: #a4e5d9;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .content_container img {
+        display: none;
+    }
+    
+    .content_container h1 {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 44px;
+        line-height: 53px;
+        text-transform: uppercase;
+    
+        color: #005847;
+    }
+    
+    .content_container p{
+        display: none;
+    }
+    
+    .content_container table{
+        width: 90%;
+    }
+
+}
