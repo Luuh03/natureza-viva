@@ -39,7 +39,7 @@
                     </tr>
                     <tr>
                         <td>Alugado por:</td>
-                        <td id="botao1"><a id="confirmar">Confirmar</a></td>
+                        <td id="botao1"><button id="confirmar">Confirmar</button></td>
                     </tr>
                 </table>
             </div>
@@ -59,8 +59,8 @@
                         <td>Alugado por:</td>
                     </tr>
                     <tr>
-                        <td id="botao2"><a id="abrir">Abrir Ocorrência</a></td>
-                        <td id="botao2"><a id=confirmar>Fechar Aluguel</a></td>
+                        <td id="botao2"><button id="abrir">Abrir Ocorrência</button></td>
+                        <td id="botao2"><button id=confirmar>Fechar Aluguel</button></td>
                     </tr>
                 </table>      
             </div>

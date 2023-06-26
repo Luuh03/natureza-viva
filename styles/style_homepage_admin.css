@@ -120,6 +120,14 @@ h3 {
     align-items: right;
     color:  #333;
     font-weight: 600;
+    border: 0px;
+    transition: all 0.2s;
+    cursor: pointer;  
+}
+
+#confirmar:hover {
+    background-color: #02896F;
+    color: white;
 }
 
 #botao2 {
@@ -133,4 +141,12 @@ h3 {
     align-items: right;
     color:  #333;
     font-weight: 600;
+    border: 0px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+#abrir:hover {
+    background-color: #D38200;
+    color: white;
 }
