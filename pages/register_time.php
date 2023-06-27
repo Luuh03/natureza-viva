@@ -14,7 +14,7 @@
     <header>
         <nav>
             <ul>
-                <li><a href="../index.php" ><img src="../images/logo natu 1.png" alt="logo"></a></li>
+                <li><a href="../index.php" ><img src="../images/natureza_logo.png" alt="logo"></a></li>
                 <li><a href="">Gerenciar Aluguel</a></li>
                 <li><a href="">Gerenciar Horários</a></li>
                 <li><a href="">Gerenciar Espaços</a></li>
