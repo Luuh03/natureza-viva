@@ -16,4 +16,14 @@ create table locais (
     bairro  varchar(30) not null,
     rua  varchar(30) not null,
     numero int(10)
+);
+
+create table agendamentos (
+	id int (5) not null auto_increment primary key,
+    idespaco int (5) not null,
+    idusuario int (5),
+    dataagendamento date,
+    hora time
 )
+
+
