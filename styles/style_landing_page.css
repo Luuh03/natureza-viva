@@ -1,0 +1,59 @@
+
+.logo_container {
+    width: 70%;
+    background-color: #a4e5d9;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo_container img {
+    width: 428px;
+    height: 251px;
+}
+
+@media only screen and (max-device-width : 767px) {
+    .landing_page {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .logo_container {
+        width: 100%;
+        height: 20%;
+    }
+    
+    .form_container {
+        width: 100%;
+        height: 80%;
+    }
+    
+    .form_container form {
+        margin-top: 0px;
+    }
+    
+    .form_container form p {
+        font-size: 3.125rem;
+    }
+    
+    .form_container form input {
+        width: 35rem;
+        height: 5rem;
+
+        font-size: 3rem;
+    }
+    
+    .form_container form button {
+        width: 21.875rem;
+        height: 6rem;
+
+        font-size: 2.5rem;
+    }
+    
+    .form_container form h3 {
+        font-size: 2.5rem;
+    }
+    
+}
