@@ -33,7 +33,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>     
+        <title>Cadastro</title>     
         <link type="text/css" rel="stylesheet" href="../styles/style.css"/>
         <link type="text/css" rel="stylesheet" href="../styles/style_register.css"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">

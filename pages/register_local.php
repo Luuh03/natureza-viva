@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title></title>
+    <title>Cadastrar Espaço</title>
     <link type="text/css" rel="stylesheet" href="../styles/style.css" />
     <link type="text/css" rel="stylesheet" href="../styles/style_register_local.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,8 +16,8 @@
             <ul>
                 <li><a><img src="../images/natureza_logo.png" alt="logo"></a></li>
                 <li><a href="./homepage_admin.php">Gerenciar Aluguel</a></li>
-                <li><a href="./register_time.php">Gerenciar Horários</a></li>
-                <li><a href="./register_local.php">Gerenciar Espaços</a></li>
+                <li><a href="./register_local.php">Cadastrar Espaço</a></li>
+                <li><a href="./register_time.php">Cadastrar Horário</a></li>
                 <li><a href="#">Consultar Agendamentos</a></li>
             </ul>
         </nav>
