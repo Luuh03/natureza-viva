@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -24,7 +27,7 @@
         </header>
 
         <main>
-            <h1>Olá Administrador</h1><br>
+            <h1>Olá <?php echo $_SESSION['nome'] ?></h1><br>
 
             <h2>Agendamentos aguardando confirmação:</h2>
 

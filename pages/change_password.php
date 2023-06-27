@@ -7,17 +7,22 @@
 
         if($senha == $senhaConfirmacao) {
             $senha = base64_encode($senha);
+            
+            $login = $_SESSION['login'];
+            $senhaAntiga = $_SESSION['senha'];
 
             session_start();
-            $sql = "SELECT id FROM usuarios WHERE login = '$login' AND senha = '$senha'";
+            $sql = "SELECT id FROM usuarios WHERE login = '$login' AND senha = '$senhaAntiga'";
             $resultado = mysqli_query($conexao, $sql);
-            $nome = mysqli_fetch_row($resultado);
+            $id = mysqli_fetch_row($resultado);
 
-            $sql = "UPDATE `trabalho_dwe`.`usuarios` SET `senha` = 'patatu' WHERE (`id` = '7');";
+            $sql = "UPDATE trabalho_dwe.usuarios SET senha = '$senha' WHERE (id = $id);";
+
+            $_SESSION['senha'] = $senha;
 
             $resultado = mysqli_query($conexao, $sql); 
 
-            $newURL = "./index";
+            $newURL = "/homepage_admin";
             header("Location: .$newURL.php");
 
             die();

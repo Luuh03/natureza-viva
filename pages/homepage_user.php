@@ -1,6 +1,8 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
-
 <head>
     <title></title>
     <link type="text/css" rel="stylesheet" href="../styles/style.css" />
@@ -27,7 +29,7 @@
     </header>
 
     <main>
-        <h1>Olá Usuário</h1><br>
+        <h1>Olá <?php echo $_SESSION['nome'] ?></h1><br>
 
         <h2>Agendamentos requisitados:</h2>
 

@@ -28,14 +28,16 @@
                     header("Location: .$newURL.php");
                     die();
                 } else {
+                    $newURL = "/pages/homepage_admin";
+                    header("Location: .$newURL.php");
+                    die();
 
                 }
 
-                $newURL = "/pages/change_password";
+            } else {
+                $newURL = "/pages/homepage_user";
                 header("Location: .$newURL.php");
                 die();
-            } else {
-                // envia usuário normal pra página inicial
             }
             
 
