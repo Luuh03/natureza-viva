@@ -14,11 +14,11 @@
     <header>
         <nav>
             <ul>
-                <li><a href="../index.php" ><img src="../images/natureza_logo.png" alt="logo"></a></li>
-                <li><a href="">Gerenciar Aluguel</a></li>
-                <li><a href="">Gerenciar Horários</a></li>
-                <li><a href="">Gerenciar Espaços</a></li>
-                <li><a href="">Consultar Agendamentos</a></li>
+                <li><a><img src="../images/natureza_logo.png" alt="logo"></a></li>
+                <li><a href="./homepage_admin.php">Gerenciar Aluguel</a></li>
+                <li><a href="./register_time.php">Gerenciar Horários</a></li>
+                <li><a href="./register_local.php">Gerenciar Espaços</a></li>
+                <li><a href="#">Consultar Agendamentos</a></li>
             </ul>
         </nav>
     </header>
