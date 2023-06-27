@@ -1,3 +1,21 @@
+<?php
+    function registrarlugar(){
+
+    include "../scripts/connection.php";
+    $tipo = $_POST["tipo"];
+    $nomeespaco = $_POST["nomeespaco"];
+    $cidade = $_POST["cidade"];
+    $bairro = $_POST["bairro"];
+    $rua = $_POST["rua"];
+    $numero = $_POST["numero"];
+    
+    $sql = "INSERT INTO locais (tipo, nomeespaco, cidade, bairro, rua, numero) VALUES";
+    $sql.= "('$tipo', '$nomeespaco', '$cidade', '$bairro', '$rua', '$numero')";
+    }
+
+    if(empty($_POST["tipo"])){  ?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -40,16 +58,21 @@
                 <label>Rua:</label>
                 <input type="text" name="rua" required><br>
                 <label>Número:</label>
-                <input type="text" name="numero" required>
+                <input type="number" name="numero" required>
 
                 <center>
                     <button type="submit">
-                        Iniciar sessão
+                        Registrar
                     </button>
             </form>
         </div>
 
     </main>
+    <?php
+            } else { 
+            registrarlugar();
+            } 
+        ?>
 </body>
 
 </html>

@@ -7,3 +7,13 @@ create table usuarios (
     login varchar(30) not null,
     senha varchar(30) not null
 );
+
+create table locais (
+    id int (5) not null auto_increment primary key,
+    tipo varchar(100) not null,
+    nomeespaco varchar(30) not null,
+    cidade  varchar(30) not null,
+    bairro  varchar(30) not null,
+    rua  varchar(30) not null,
+    numero int(10)
+)
