@@ -11,6 +11,10 @@
     
     $sql = "INSERT INTO locais (tipo, nomeespaco, cidade, bairro, rua, numero) VALUES";
     $sql.= "('$tipo', '$nomeespaco', '$cidade', '$bairro', '$rua', '$numero')";
+
+    $resultado = mysqli_query($conexao, $sql); 
+    
+    header("Refresh: 0");
     }
 
     if(empty($_POST["tipo"])){  ?>
