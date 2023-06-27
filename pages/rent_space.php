@@ -28,9 +28,7 @@
     </header>
 
     <main>
-        <h1>Olá <?php echo $_SESSION['nome'] ?></h1><br>
-
-        <h2>Agendamentos requisitados:</h2>
+        <h1>Locais Disponíveis:</h1><br>
 
         <div class="box">
             <table>
@@ -43,27 +41,8 @@
                 <tr>
                     <td>Dia e Horário:</td>
                 </tr>
-                <tr>
-                    <td id="botao2"><button id="abrir">Alterar</button></td>
-                    <td id="botao2"><button id=confirmar>Excluir</button></td>
-                </tr>
             </table>
         </div>
-
-        <h2>Agendamentos feitos:</h2>
-
-        <div class="box">
-            <table>
-                <tr>
-                    <td>
-                        <h3> Auditório</h3>
-                    </td>
-                    <td> Rua:</td>
-                    <td>Dia e Horário:</td>
-                </tr>
-            </table>
-        </div>
-        <br>
     </main>
 </body>
 
