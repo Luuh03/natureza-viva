@@ -2,22 +2,40 @@
     function change_password() {
         include "./scripts/connection.php";
 
-        $login = $_POST["login"];
         $senha = $_POST["senha"];
+        $senhaConfirmacao = $_POST["senhaConfirmacao"];
 
-        $senha = base64_encode($senha);
+        if($senha == $senhaConfirmacao) {
+            $senha = base64_encode($senha);
+
+            session_start();
+            $sql = "SELECT id FROM usuarios WHERE login = '$login' AND senha = '$senha'";
+            $resultado = mysqli_query($conexao, $sql);
+            $nome = mysqli_fetch_row($resultado);
+
+            $sql = "UPDATE `trabalho_dwe`.`usuarios` SET `senha` = 'patatu' WHERE (`id` = '7');";
+
+            $resultado = mysqli_query($conexao, $sql); 
+
+            $newURL = "./index";
+            header("Location: .$newURL.php");
+
+            die();
+        } else {
+
+            header("Refresh: 0");
+            echo '<script type="text/javascript">
+                window.onload = function () { alert("As senhas são diferentes!"); } 
+            </script>'; 
+
+        }
 
         $sql = "SELECT * FROM usuarios WHERE login = '$login' AND senha = '$senha'";
 
         $resultado = mysqli_query($conexao, $sql); 
         $num_linhas = mysqli_num_rows($resultado);
 
-        if($login == "admin" && $senha == "123456"){
-            $newURL = "/pages/change_password";
-            header("Location: .$newURL.php");
-
-            die();
-        }
+        
 
     }
     if(empty($_POST["login"])){  ?>
@@ -25,7 +43,7 @@
 <html>
 
     <head>
-        <title></title>
+        <title>Mudança de senha</title>
         <link type="text/css" rel="stylesheet" href="../styles/style.css" />
         <link type="text/css" rel="stylesheet" href="../styles/style_change_password.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,9 +58,9 @@
         <div class="form_container">
             <form method="post">
                 <p>Senha:</p>
-                <input type="text" name="login" required>
+                <input type="text" name="senha" required>
                 <p>Confirmar senha:</p>
-                <input type="password" name="senha" required>
+                <input type="password" name="senhaConfirmacao" required>
                 <center>
                     <button type="submit">
                         Alterar Senha
