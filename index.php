@@ -7,18 +7,50 @@
 
         $senha = base64_encode($senha);
 
-        $sql = "SELECT * FROM usuarios WHERE login = '$login' AND senha = '$senha'";
+        $sql = "SELECT nome FROM usuarios WHERE login = '$login' AND senha = '$senha'";
 
         $resultado = mysqli_query($conexao, $sql); 
         $num_linhas = mysqli_num_rows($resultado);
 
-        echo $num_linhas;
+        if($num_linhas != 0) {
+            $nome = mysqli_fetch_row($resultado);
+
+            session_start();
+            $_SESSION['nome'] = $nome[0];
+            $_SESSION['login'] = $login;
+            $_SESSION['senha'] = $senha;
+
+            if($login == "admin"){
+                if(!isset($_SESSION['acessos'])){
+                    $_SESSION['acessos'] = 1;
+
+                    $newURL = "/pages/change_password";
+                    header("Location: .$newURL.php");
+                    die();
+                } else {
+
+                }
+
+                $newURL = "/pages/change_password";
+                header("Location: .$newURL.php");
+                die();
+            } else {
+                // envia usuário normal pra página inicial
+            }
+            
+
+        } else {
+            header("Refresh: 0");
+            echo '<script type="text/javascript">
+                window.onload = function () { alert("Nenhum usuário foi encontrado!"); } 
+            </script>'; 
+        }
     }
     if(empty($_POST["login"])){  ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>     
+        <title>Natureza Viva</title>     
         <link type="text/css" rel="stylesheet" href="./styles/style.css"/>
         <link type="text/css" rel="stylesheet" href="./styles/style_landing_page.css"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
