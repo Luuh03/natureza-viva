@@ -21,9 +21,7 @@
             $_SESSION['senha'] = $senha;
 
             if($login == "admin"){
-                if(!isset($_SESSION['acessos'])){
-                    $_SESSION['acessos'] = 1;
-
+                if($senha == base64_encode('123456')){
                     $newURL = "/pages/change_password";
                     header("Location: .$newURL.php");
                     die();

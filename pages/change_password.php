@@ -1,22 +1,22 @@
 <?php
     function change_password() {
-        include "./scripts/connection.php";
+        include "../scripts/connection.php";
 
         $senha = $_POST["senha"];
         $senhaConfirmacao = $_POST["senhaConfirmacao"];
 
         if($senha == $senhaConfirmacao) {
+            session_start();
             $senha = base64_encode($senha);
             
             $login = $_SESSION['login'];
             $senhaAntiga = $_SESSION['senha'];
 
-            session_start();
             $sql = "SELECT id FROM usuarios WHERE login = '$login' AND senha = '$senhaAntiga'";
             $resultado = mysqli_query($conexao, $sql);
             $id = mysqli_fetch_row($resultado);
 
-            $sql = "UPDATE trabalho_dwe.usuarios SET senha = '$senha' WHERE (id = $id);";
+            $sql = "UPDATE trabalho_dwe.usuarios SET senha = '$senha' WHERE id = '$id[0]'";
 
             $_SESSION['senha'] = $senha;
 
@@ -43,7 +43,7 @@
         
 
     }
-    if(empty($_POST["login"])){  ?>
+    if(empty($_POST["senha"])){  ?>
 <!DOCTYPE html>
 <html>
 
