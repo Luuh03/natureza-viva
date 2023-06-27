@@ -16,8 +16,13 @@
     <body>
         <header>
             <nav>
-                <ul>
-                    <li><a><img src="../images/natureza_logo.png" alt="logo"></a></li>
+                <ul id="menu">
+                    <li><a><img src="../images/natureza_logo.png" alt="logo"></a>
+                        <ul>
+                            <li><a href="./homepage_admin.php">Início</a></li>
+                            <li><a href="../index.php">Sair</a></li>
+                        </ul>
+                    </li>
                     <li><a href="./homepage_admin.php">Gerenciar Aluguel</a></li>
                     <li><a href="./register_local.php">Cadastrar Espaço</a></li>
                     <li><a href="./register_time.php">Cadastrar Horário</a></li>

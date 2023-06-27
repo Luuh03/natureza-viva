@@ -23,7 +23,6 @@
                     </ul>
                 </li>
                 <li><a href="./homepage_admin.php">Alugar Espaço</a></li>
-                <li><a href="./register_time.php">Consultar Espaços</a></li>
             </ul>
         </nav>
     </header>
