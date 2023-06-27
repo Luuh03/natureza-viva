@@ -21,9 +21,7 @@
                     </ul>
                 </li>
                 <li><a href="./homepage_admin.php">Alugar Espaço</a></li>
-                <li><a href="./register_time.php">Gerenciar Horários</a></li>
-                <li><a href="./register_local.php">Gerenciar Espaços</a></li>
-                <li><a href="#">Consultar Agendamentos</a></li>
+                <li><a href="./register_time.php">Consultar Espaços</a></li>
             </ul>
         </nav>
     </header>

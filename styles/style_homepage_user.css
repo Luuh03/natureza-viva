@@ -24,7 +24,7 @@ ul {
     padding: 0px;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     list-style: none;
     margin: 0px;
 }
@@ -74,6 +74,7 @@ nav ul li a {
 }
 
 li a img{
+    flex-basis: auto;
     width: 77px;
     height: 74px;
 }
