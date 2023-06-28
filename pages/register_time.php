@@ -37,7 +37,7 @@
                 <li><a href="./homepage_admin.php">Gerenciar Aluguel</a></li>
                 <li><a href="./register_local.php">Cadastrar Espaço</a></li>
                 <li><a href="./register_time.php">Cadastrar Horário</a></li>
-                <li><a href="#">Consultar Agendamentos</a></li>
+                <li><a href="./rent_scheduling.php">Consultar Agendamentos</a></li>
             </ul>
         </nav>
     </header>

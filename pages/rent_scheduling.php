@@ -5,7 +5,7 @@
 <html>
 
     <head>
-        <title>Página Inicial</title>
+        <title>Consultar Agendamentos</title>
         <link type="text/css" rel="stylesheet" href="../styles/style.css" />
         <link type="text/css" rel="stylesheet" href="../styles/style_homepage_admin.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,9 +32,7 @@
         </header>
 
         <main>
-            <h1>Olá <?php echo $_SESSION['nome'] ?></h1><br>
-
-            <h2>Agendamentos aguardando confirmação:</h2>
+            <h1>Agendamentos:</h1><br>
 
             <div class="box">
                 <table>
@@ -47,30 +45,8 @@
                     </tr>
                     <tr>
                         <td>Alugado por:</td>
-                        <td id="botao1"><button id="confirmar">Confirmar</button></td>
                     </tr>
                 </table>
-            </div>
-
-            <h2>Agendamentos em aberto:</h2>
-
-            <div class="box">
-                <table>
-                    <tr>
-                        <td><h3> Auditório</h3></td>
-                        <td> Rua:</td>
-                    </tr>
-                    <tr>
-                        <td>Dia e Horário</td>
-                    </tr>
-                    <tr>
-                        <td>Alugado por:</td>
-                    </tr>
-                    <tr>
-                        <td id="botao2"><button id="abrir">Abrir Ocorrência</button></td>
-                        <td id="botao2"><button id=confirmar>Fechar Aluguel</button></td>
-                    </tr>
-                </table>      
             </div>
             <br>
         </main>

@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>Página Inicial</title>
     <link type="text/css" rel="stylesheet" href="../styles/style.css" />
     <link type="text/css" rel="stylesheet" href="../styles/style_homepage_user.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
