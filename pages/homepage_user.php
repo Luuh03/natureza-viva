@@ -32,23 +32,53 @@
 
         <h2>Agendamentos requisitados:</h2>
 
-        <div class="box">
-            <table>
-                <tr>
-                    <td>
-                        <h3> Auditório</h3>
-                    </td>
-                    <td> Rua:</td>
-                </tr>
-                <tr>
-                    <td>Dia e Horário:</td>
-                </tr>
-                <tr>
-                    <td id="botao2"><button id="abrir">Alterar</button></td>
-                    <td id="botao2"><button id=confirmar>Excluir</button></td>
-                </tr>
-            </table>
-        </div>
+        <?php
+            include "../scripts/connection.php";
+
+            $sql = "SELECT a.dataagendamento,
+                        a.hora,
+                        l.tipo,
+                        l.nomeespaco,
+                        l.rua,
+                        l.numero
+                FROM
+                        agendamentos a
+                INNER JOIN
+                        locais l
+                ON a.idespaco = l.id
+                WHERE a.estado = 'R'
+                GROUP BY a.id";
+
+            $resultado = mysqli_query($conexao, $sql);
+            $num_linhas = mysqli_num_rows($resultado);
+            $agendamento = mysqli_fetch_row($resultado);
+
+            if ($num_linhas != 0){
+                for($i=0; $i<$num_linhas;$i++){
+                    echo "<div class='box'>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h3>$agendamento[2]: $agendamento[3]</h3>
+                                    </td>
+                                    <td>$agendamento[4] Nº $agendamento[5]</td>
+                                </tr>
+                                <tr>
+                                    <td>Dia e Horário: $agendamento[0]  $agendamento[1]</td>
+                                </tr>
+                                <tr>
+                                    <td id='botao2'><button id='abrir'>Alterar</button></td>
+                                    <td id='botao2'><button id=confirmar>Excluir</button></td>
+                                </tr>
+                            </table>
+                        </div>";
+                }
+            } else {
+                echo "<center><h3>Nenhum espaço foi requisitado ainda!</h3></center>";
+            }
+
+            
+        ?>
 
         <h2>Agendamentos feitos:</h2>
 

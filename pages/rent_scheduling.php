@@ -34,20 +34,50 @@
         <main>
             <h1>Agendamentos:</h1><br>
 
-            <div class="box">
-                <table>
-                    <tr>
-                        <td><h3> Auditório</h3></td>
-                        <td> Rua:</td>
-                    </tr>
-                    <tr>
-                        <td>Dia e Horário</td>
-                    </tr>
-                    <tr>
-                        <td>Alugado por:</td>
-                    </tr>
-                </table>
-            </div>
+            <?php
+                include "../scripts/connection.php";
+
+                $sql = "SELECT a.dataagendamento,
+                                a.hora,
+                                l.tipo,
+                                l.nomeespaco,
+                                l.rua,
+                                l.numero,
+                                u.nome
+                        FROM
+                                agendamentos a
+                        INNER JOIN
+                                usuarios u
+                        ON a.idusuario = u.id
+                        INNER JOIN
+                                locais l
+                        ON a.idespaco = l.id
+                        GROUP BY a.id";
+
+                $resultado = mysqli_query($conexao, $sql);
+                $num_linhas = mysqli_num_rows($resultado);
+                $requisicoes = mysqli_fetch_row($resultado);
+
+                for($i=0; $i<$num_linhas;$i++){
+                    echo "<div class='box'>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h3>$requisicoes[2]: $requisicoes[3]</h3>
+                                    </td>
+                                    <td>$requisicoes[4] Nº $requisicoes[5]</td>
+                                </tr>
+                                <tr>
+                                    <td>Dia e Horário: $requisicoes[0]  $requisicoes[1]</td>
+                                </tr>
+                                <tr>
+                                    <td>Alugado por:$requisicoes[6]</td>
+                                </tr>
+                            </table>
+                        </div>";
+                }
+            ?>
+            
             <br>
         </main>
     </body>

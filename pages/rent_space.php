@@ -30,19 +30,42 @@
     <main>
         <h1>Locais Disponíveis:</h1><br>
 
-        <div class="box">
-            <table>
-                <tr>
-                    <td>
-                        <h3> Auditório</h3>
-                    </td>
-                    <td> Rua:</td>
-                </tr>
-                <tr>
-                    <td>Dia e Horário:</td>
-                </tr>
-            </table>
-        </div>
+        <?php
+            include "../scripts/connection.php";
+
+            $sql = "SELECT a.dataagendamento,
+                    a.hora,
+                    l.tipo,
+                    l.nomeespaco,
+                    l.rua,
+                    l.numero
+                    FROM
+                            agendamentos a
+                    INNER JOIN
+                            locais l
+                    ON a.idespaco = l.id
+                    GROUP BY a.id";
+
+            $resultado = mysqli_query($conexao, $sql);
+            $num_linhas = mysqli_num_rows($resultado);
+            $agendamento = mysqli_fetch_row($resultado);
+
+            for($i=0; $i<$num_linhas;$i++){
+                echo "<div class='box'>
+                        <table>
+                            <tr>
+                                <td>
+                                    <h3>$agendamento[2]: $agendamento[3]</h3>
+                                </td>
+                                <td>$agendamento[4] Nº $agendamento[5]</td>
+                            </tr>
+                            <tr>
+                                <td>Dia e Horário: $agendamento[0]  $agendamento[1]</td>
+                            </tr>
+                        </table>
+                    </div>";
+            }
+        ?>
         <br>
     </main>
 </body>
