@@ -23,7 +23,8 @@ create table agendamentos (
     idespaco int (5) not null,
     idusuario int (5),
     dataagendamento date,
-    hora time
+    hora time,
+    estado varchar(1)
 )
 
 

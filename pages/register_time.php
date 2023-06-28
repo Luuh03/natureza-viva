@@ -1,3 +1,17 @@
+<?php
+    function cadastraLugar() {
+        include "../scripts/connection.php";
+        $data = $_POST["data"];
+        $hora = $_POST["hora"];
+        $espaco = $_POST["espaco"];
+
+        $sql = "INSERT INTO agendamentos (idespaco, dataagendamento, hora, estado) VALUES ('$espaco', '$data', '$hora', 'D')";
+
+        $resultado = mysqli_query($conexao, $sql);
+        
+        header("Refresh: 0");
+    }
+    if(empty($_POST["data"])){  ?>
 <!DOCTYPE html>
 <html>
 
@@ -34,11 +48,26 @@
         <div class="container">
 
             <form method="post">
-                <h2>Espaço salão de festa:</h2>
+                <h2>Espaço salão de festa:
+                    <select name="espaco">
+                        <?php 
+                            include "../scripts/connection.php";
+
+                            $sql = "SELECT nomeespaco, id FROM locais";
+                            $resultado = mysqli_query($conexao, $sql);
+                            $num_linhas = mysqli_num_rows($resultado);
+                            $lugar = mysqli_fetch_row($resultado);
+
+                            for($i=0; $i<$num_linhas;$i++){
+                                echo "<option value='$lugar[1]'>$lugar[0]</option>";
+                            }
+                        ?>
+                    </select>
+                </h2>
                 <label>Data:</label>
-                <input type="text" name="tipo" required><br>
+                <input type="date" name="data" required><br>
                 <label>Hora:</label>
-                <input type="text" name="nomeespaco" required><br>
+                <input type="time" name="hora" required><br>
 
                 <center>
                     <button type="submit">
@@ -46,8 +75,12 @@
                     </button>
             </form>
         </div>
-
     </main>
+    <?php
+    } else { 
+        cadastraLugar();
+    } 
+    ?>
 </body>
 
 </html>
