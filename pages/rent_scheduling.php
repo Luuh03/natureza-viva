@@ -1,43 +1,44 @@
 <?php
 session_start();
-?>
-<!DOCTYPE html>
-<html>
+if ($_SESSION['login'] == 'admin') {
+    ?>
+    <!DOCTYPE html>
+    <html>
 
-<head>
-    <title>Consultar Agendamentos</title>
-    <link type="text/css" rel="stylesheet" href="../styles/style.css" />
-    <link type="text/css" rel="stylesheet" href="../styles/style_homepage_admin.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-</head>
+    <head>
+        <title>Consultar Agendamentos</title>
+        <link type="text/css" rel="stylesheet" href="../styles/style.css" />
+        <link type="text/css" rel="stylesheet" href="../styles/style_homepage_admin.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    </head>
 
-<body>
-    <header>
-        <nav>
-            <ul id="menu">
-                <li><a><img src="../images/natureza_logo.png" alt="logo"></a>
-                    <ul>
-                        <li><a href="./homepage_admin.php">Início</a></li>
-                        <li><a href="../index.php">Sair</a></li>
-                    </ul>
-                </li>
-                <li><a href="./homepage_admin.php">Gerenciar Aluguel</a></li>
-                <li><a href="./register_local.php">Cadastrar Espaço</a></li>
-                <li><a href="./register_time.php">Cadastrar Horário</a></li>
-                <li><a href="./rent_scheduling.php">Consultar Agendamentos</a></li>
-            </ul>
-        </nav>
-    </header>
+    <body>
+        <header>
+            <nav>
+                <ul id="menu">
+                    <li><a><img src="../images/natureza_logo.png" alt="logo"></a>
+                        <ul>
+                            <li><a href="./homepage_admin.php">Início</a></li>
+                            <li><a href="../index.php">Sair</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./homepage_admin.php">Gerenciar Aluguel</a></li>
+                    <li><a href="./register_local.php">Cadastrar Espaço</a></li>
+                    <li><a href="./register_time.php">Cadastrar Horário</a></li>
+                    <li><a href="./rent_scheduling.php">Consultar Agendamentos</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <main>
-        <h1>Agendamentos:</h1><br>
+        <main>
+            <h1>Agendamentos:</h1><br>
 
-        <?php
-        include "../scripts/connection.php";
+            <?php
+            include "../scripts/connection.php";
 
-        $sql = "SELECT a.dataagendamento,
+            $sql = "SELECT a.dataagendamento,
                                 a.hora,
                                 l.tipo,
                                 l.nomeespaco,
@@ -54,10 +55,10 @@ session_start();
                         ON a.idespaco = l.id
                         GROUP BY a.id";
 
-        $resultado = mysqli_query($conexao, $sql);
+            $resultado = mysqli_query($conexao, $sql);
 
-        while ($requisicoes = mysqli_fetch_row($resultado)) {
-            echo "<div class='box'>
+            while ($requisicoes = mysqli_fetch_row($resultado)) {
+                echo "<div class='box'>
                             <table>
                                 <tr>
                                     <td>
@@ -73,11 +74,17 @@ session_start();
                                 </tr>
                             </table>
                         </div>";
-        }
-        ?>
+            }
+            ?>
 
-        <br>
-    </main>
+            <br>
+        </main>
+        <?php
+} else {
+    session_destroy();
+    header("Location: ../index.php");
+}
+?>
 </body>
 
 </html>

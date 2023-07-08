@@ -1,8 +1,8 @@
 <?php
-    session_start();
-?>
-<!DOCTYPE html>
-<html>
+session_start();
+if ($_SESSION['login'] == 'admin') { ?>
+    <!DOCTYPE html>
+    <html>
 
     <head>
         <title>Página Inicial</title>
@@ -32,14 +32,18 @@
         </header>
 
         <main>
-            <h1>Olá <?php echo $_SESSION['nome'] ?></h1><br>
+            <h1>Olá
+                <?php echo $_SESSION['nome'] ?>
+            </h1><br>
 
             <h2>Agendamentos aguardando confirmação:</h2>
 
             <div class="box">
                 <table>
                     <tr>
-                        <td><h3> Auditório</h3></td>
+                        <td>
+                            <h3> Auditório</h3>
+                        </td>
                         <td> Rua:</td>
                     </tr>
                     <tr>
@@ -57,7 +61,9 @@
             <div class="box">
                 <table>
                     <tr>
-                        <td><h3> Auditório</h3></td>
+                        <td>
+                            <h3> Auditório</h3>
+                        </td>
                         <td> Rua:</td>
                     </tr>
                     <tr>
@@ -70,10 +76,16 @@
                         <td id="botao2"><button id="abrir">Abrir Ocorrência</button></td>
                         <td id="botao2"><button id=confirmar>Fechar Aluguel</button></td>
                     </tr>
-                </table>      
+                </table>
             </div>
             <br>
         </main>
-    </body>
+        <?php
+} else {
+    session_destroy();
+    header("Location: ../index.php");
+}
+?>
+</body>
 
 </html>
