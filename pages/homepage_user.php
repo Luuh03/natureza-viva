@@ -50,11 +50,9 @@
                 GROUP BY a.id";
 
             $resultado = mysqli_query($conexao, $sql);
-            $num_linhas = mysqli_num_rows($resultado);
-            $agendamento = mysqli_fetch_row($resultado);
-
-            if ($num_linhas != 0){
-                for($i=0; $i<$num_linhas;$i++){
+            
+            if (mysqli_num_rows($resultado) != 0){
+                while($agendamento = mysqli_fetch_row($resultado)){
                     echo "<div class='box'>
                             <table>
                                 <tr>

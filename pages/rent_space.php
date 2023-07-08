@@ -1,8 +1,9 @@
 <?php
-    session_start();
+session_start();
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Alugar Espaço</title>
     <link type="text/css" rel="stylesheet" href="../styles/style.css" />
@@ -31,9 +32,9 @@
         <h1>Locais Disponíveis:</h1><br>
 
         <?php
-            include "../scripts/connection.php";
+        include "../scripts/connection.php";
 
-            $sql = "SELECT a.dataagendamento,
+        $sql = "SELECT a.dataagendamento,
                     a.hora,
                     l.tipo,
                     l.nomeespaco,
@@ -46,12 +47,10 @@
                     ON a.idespaco = l.id
                     GROUP BY a.id";
 
-            $resultado = mysqli_query($conexao, $sql);
-            $num_linhas = mysqli_num_rows($resultado);
-            $agendamento = mysqli_fetch_row($resultado);
+        $resultado = mysqli_query($conexao, $sql);
 
-            for($i=0; $i<$num_linhas;$i++){
-                echo "<div class='box'>
+        while ($agendamento = mysqli_fetch_row($resultado)) {
+            echo "<div class='box'>
                         <table>
                             <tr>
                                 <td>
@@ -64,7 +63,7 @@
                             </tr>
                         </table>
                     </div>";
-            }
+        }
         ?>
         <br>
     </main>
