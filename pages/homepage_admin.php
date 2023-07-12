@@ -20,7 +20,11 @@ if ($_SESSION['login'] == 'admin') { ?>
                     <li><a><img src="../images/natureza_logo.png" alt="logo"></a>
                         <ul>
                             <li><a href="./homepage_admin.php">Início</a></li>
-                            <li><a href="../index.php">Sair</a></li>
+                            <li>
+                                <form action="../scripts/logoff.php">
+                                    <button type="submit">Sair</button>
+                                </form>
+                            </li>
                         </ul>
                     </li>
                     <li><a href="./homepage_admin.php">Gerenciar Aluguel</a></li>
@@ -82,8 +86,7 @@ if ($_SESSION['login'] == 'admin') { ?>
         </main>
         <?php
 } else {
-    session_destroy();
-    header("Location: ../index.php");
+    include "../scripts/logoff.php";
 }
 ?>
 </body>

@@ -1,8 +1,9 @@
 <?php
-    session_start();
+session_start();
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Página Inicial</title>
     <link type="text/css" rel="stylesheet" href="../styles/style.css" />
@@ -19,7 +20,11 @@
                 <li><a><img src="../images/natureza_logo.png" alt="logo"></a>
                     <ul>
                         <li><a href="./homepage_user.php">Início</a></li>
-                        <li><a href="../index.php">Sair</a></li>
+                        <li>
+                            <form action="../scripts/logoff.php">
+                                <button type="submit">Sair</button>
+                            </form>
+                        </li>
                     </ul>
                 </li>
                 <li><a href="./rent_space.php">Alugar Espaço</a></li>
@@ -28,14 +33,16 @@
     </header>
 
     <main>
-        <h1>Olá <?php echo $_SESSION['nome'] ?></h1><br>
+        <h1>Olá
+            <?php echo $_SESSION['nome'] ?>
+        </h1><br>
 
         <h2>Agendamentos requisitados:</h2>
 
         <?php
-            include "../scripts/connection.php";
+        include "../scripts/connection.php";
 
-            $sql = "SELECT a.dataagendamento,
+        $sql = "SELECT a.dataagendamento,
                         a.hora,
                         l.tipo,
                         l.nomeespaco,
@@ -49,11 +56,11 @@
                 WHERE a.estado = 'R'
                 GROUP BY a.id";
 
-            $resultado = mysqli_query($conexao, $sql);
-            
-            if (mysqli_num_rows($resultado) != 0){
-                while($agendamento = mysqli_fetch_row($resultado)){
-                    echo "<div class='box'>
+        $resultado = mysqli_query($conexao, $sql);
+
+        if (mysqli_num_rows($resultado) != 0) {
+            while ($agendamento = mysqli_fetch_row($resultado)) {
+                echo "<div class='box'>
                             <table>
                                 <tr>
                                     <td>
@@ -70,12 +77,12 @@
                                 </tr>
                             </table>
                         </div>";
-                }
-            } else {
-                echo "<center><h3>Nenhum espaço foi requisitado ainda!</h3></center>";
             }
+        } else {
+            echo "<center><h3>Nenhum espaço foi requisitado ainda!</h3></center>";
+        }
 
-            
+
         ?>
 
         <h2>Agendamentos feitos:</h2>
