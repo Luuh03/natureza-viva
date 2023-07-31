@@ -35,11 +35,7 @@ if ($_SESSION['login'] == 'admin') {
                             <li><a><img src="../images/natureza_logo.png" alt="logo"></a>
                                 <ul>
                                     <li><a href="./homepage_admin.php">Início</a></li>
-                                    <li>
-                                        <form action="../scripts/logoff.php">
-                                            <button type="submit">Sair</button>
-                                        </form>
-                                    </li>
+                                    <li><a href="../scripts/logoff.php">Sair</a></li>
                                 </ul>
                             <li><a href="./homepage_admin.php">Gerenciar Aluguel</a></li>
                             <li><a href="./register_local.php">Cadastrar Espaço</a></li>

@@ -20,11 +20,7 @@ session_start();
                 <li><a><img src="../images/natureza_logo.png" alt="logo"></a>
                     <ul>
                         <li><a href="./homepage_user.php">Início</a></li>
-                        <li>
-                            <form action="../scripts/logoff.php">
-                                <button type="submit">Sair</button>
-                            </form>
-                        </li>
+                        <li><a href="../scripts/logoff.php">Sair</a></li>
                     </ul>
                 </li>
                 <li><a href="./rent_space.php">Alugar Espaço</a></li>

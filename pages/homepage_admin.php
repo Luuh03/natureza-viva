@@ -20,11 +20,7 @@ if ($_SESSION['login'] == 'admin') { ?>
                     <li><a><img src="../images/natureza_logo.png" alt="logo"></a>
                         <ul>
                             <li><a href="./homepage_admin.php">Início</a></li>
-                            <li>
-                                <form action="../scripts/logoff.php">
-                                    <button type="submit">Sair</button>
-                                </form>
-                            </li>
+                            <li><a href="../scripts/logoff.php">Sair</a></li>
                         </ul>
                     </li>
                     <li><a href="./homepage_admin.php">Gerenciar Aluguel</a></li>
@@ -43,9 +39,9 @@ if ($_SESSION['login'] == 'admin') { ?>
             <h2>Agendamentos aguardando confirmação:</h2>
 
             <?php
-        include "../scripts/connection.php";
+            include "../scripts/connection.php";
 
-        $sql = "SELECT a.dataagendamento,
+            $sql = "SELECT a.dataagendamento,
                         a.hora,
                         l.tipo,
                         l.nomeespaco,
@@ -59,11 +55,11 @@ if ($_SESSION['login'] == 'admin') { ?>
                 WHERE a.estado = 'R'
                 GROUP BY a.id";
 
-        $resultado = mysqli_query($conexao, $sql);
+            $resultado = mysqli_query($conexao, $sql);
 
-        if (mysqli_num_rows($resultado) != 0) {
-            while ($agendamento = mysqli_fetch_row($resultado)) {
-                echo "<div class='box'>
+            if (mysqli_num_rows($resultado) != 0) {
+                while ($agendamento = mysqli_fetch_row($resultado)) {
+                    echo "<div class='box'>
                             <table>
                                 <tr>
                                     <td>
@@ -80,13 +76,12 @@ if ($_SESSION['login'] == 'admin') { ?>
                                 </tr>
                             </table>
                         </div>";
+                }
+            } else {
+                echo "<center><h3>Nenhum espaço foi requisitado ainda!</h3></center>";
             }
-        } else {
-            echo "<center><h3>Nenhum espaço foi requisitado ainda!</h3></center>";
-        }
 
-
-        ?>
+            ?>
 
             <h2>Agendamentos em aberto:</h2>
 
@@ -94,9 +89,9 @@ if ($_SESSION['login'] == 'admin') { ?>
                 <table>
                     <tr>
                         <td>
-                            <h3> Auditório</h3>
+                            <h3>Auditório</h3>
                         </td>
-                        <td> Rua:</td>
+                        <td>Rua:</td>
                     </tr>
                     <tr>
                         <td>Dia e Horário</td>
