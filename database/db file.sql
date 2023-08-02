@@ -25,6 +25,6 @@ create table agendamentos (
     dataagendamento date,
     hora time,
     estado varchar(1)
-)
+);
 
 
