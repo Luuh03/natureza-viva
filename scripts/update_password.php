@@ -13,7 +13,7 @@ if ($senha == $senhaConfirmacao) {
     $resultado = mysqli_query($conexao, $sql);
     $id = mysqli_fetch_row($resultado);
 
-    $sql = "UPDATE trabalho_dwe.usuarios SET senha = '$senha' WHERE id = '$id[0]'";
+    $sql = "UPDATE natureza_viva.usuarios SET senha = '$senha' WHERE id = '$id[0]'";
 
     $_SESSION['senha'] = $senha;
 

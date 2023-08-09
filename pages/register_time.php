@@ -8,7 +8,7 @@ if ($_SESSION['login'] == 'admin') {
         $hora = $_POST["hora"];
         $espaco = $_POST["espaco"];
 
-        $sql = "INSERT INTO agendamentos (idespaco, dataagendamento, hora, estado) VALUES ('$espaco', '$data', '$hora', 'D')";
+        $sql = "INSERT INTO natureza_viva.agendamentos (idespaco, dataagendamento, hora, estado) VALUES ('$espaco', '$data', '$hora', 'D')";
 
         $resultado = mysqli_query($conexao, $sql);
 
@@ -56,7 +56,7 @@ if ($_SESSION['login'] == 'admin') {
                                 <?php
                                 include "../scripts/connection.php";
 
-                                $sql = "SELECT nomeespaco, id FROM locais";
+                                $sql = "SELECT nomeespaco, id FROM natureza_viva.locais";
                                 $resultado = mysqli_query($conexao, $sql);
 
                                 while ($lugar = mysqli_fetch_row($resultado)) {

@@ -4,7 +4,7 @@ $senha = $_POST["senha"];
 
 $senha = base64_encode($senha);
 
-$sql = "SELECT nome FROM usuarios WHERE login = '$login' AND senha = '$senha'";
+$sql = "SELECT nome FROM natureza_viva.usuarios WHERE login = '$login' AND senha = '$senha'";
 
 $resultado = mysqli_query($conexao, $sql);
 $num_linhas = mysqli_num_rows($resultado);

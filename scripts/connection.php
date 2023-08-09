@@ -1,4 +1,4 @@
 <?php
     $conexao = mysqli_connect('localhost','root','');
-    $db = mysqli_select_db($conexao ,'trabalho_dwe');
+    $db = mysqli_select_db($conexao ,'natureza_viva');
 ?>

@@ -12,7 +12,7 @@ if ($_SESSION['login'] == 'admin') {
         $rua = $_POST["rua"];
         $numero = $_POST["numero"];
 
-        $sql = "INSERT INTO locais (tipo, nomeespaco, cidade, bairro, rua, numero) VALUES";
+        $sql = "INSERT INTO natureza_viva.locais (tipo, nomeespaco, cidade, bairro, rua, numero) VALUES";
         $sql .= "('$tipo', '$nomeespaco', '$cidade', '$bairro', '$rua', '$numero')";
 
         $resultado = mysqli_query($conexao, $sql);

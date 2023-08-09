@@ -46,9 +46,9 @@ if ($_SESSION['login'] == 'admin') {
                                 l.numero,
                                 u.nome
                         FROM
-                                agendamentos a
+                                natureza_viva.agendamentos a
                         INNER JOIN
-                                usuarios u
+                                natureza_viva.usuarios u
                         ON a.idusuario = u.id
                         INNER JOIN
                                 locais l

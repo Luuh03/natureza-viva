@@ -35,15 +35,15 @@ session_start();
         include "../scripts/connection.php";
 
         $sql = "SELECT a.dataagendamento,
-                    a.hora,
-                    l.tipo,
-                    l.nomeespaco,
-                    l.rua,
-                    l.numero
+                            a.hora,
+                            l.tipo,
+                            l.nomeespaco,
+                            l.rua,
+                            l.numero
                     FROM
-                            agendamentos a
+                            natureza_viva.agendamentos a
                     INNER JOIN
-                            locais l
+                            natureza_viva.locais l
                     ON a.idespaco = l.id
                     GROUP BY a.id";
 

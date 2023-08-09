@@ -48,9 +48,9 @@ if ($_SESSION['login'] == 'admin') { ?>
                         l.rua,
                         l.numero
                 FROM
-                        agendamentos a
+                        natureza_viva.agendamentos a
                 INNER JOIN
-                        locais l
+                        natureza_viva.locais l
                 ON a.idespaco = l.id
                 WHERE a.estado = 'R'
                 GROUP BY a.id";

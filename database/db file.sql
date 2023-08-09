@@ -1,5 +1,5 @@
-create database trabalho_dwe;
-use trabalho_dwe;
+create database natureza_viva;
+use natureza_viva;
 
 create table usuarios (
 	id int(5) not null auto_increment primary key,

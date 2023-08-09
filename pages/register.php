@@ -10,7 +10,7 @@
         if($senha == $senhaConfirmacao) {
             $senha = base64_encode($senha);
 
-            $sql = "INSERT INTO usuarios (nome, login, senha) VALUES";
+            $sql = "INSERT INTO natureza_viva.usuarios (nome, login, senha) VALUES";
             $sql.= "('$nome', '$login', '$senha')";
 
             $resultado = mysqli_query($conexao, $sql); 
