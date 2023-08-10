@@ -4,15 +4,7 @@ if ($_SESSION['login'] == 'admin') {
     function cadastraHorario()
     {
         include "../scripts/connection.php";
-        $data = $_POST["data"];
-        $hora = $_POST["hora"];
-        $espaco = $_POST["espaco"];
-
-        $sql = "INSERT INTO natureza_viva.agendamentos (idespaco, dataagendamento, hora, estado) VALUES ('$espaco', '$data', '$hora', 'D')";
-
-        $resultado = mysqli_query($conexao, $sql);
-
-        header("Refresh: 0");
+        include "../scripts/register_time_function.php";
     }
     if (empty($_POST["data"])) { ?>
         <!DOCTYPE html>
@@ -51,29 +43,37 @@ if ($_SESSION['login'] == 'admin') {
                 <div class="container">
 
                     <form method="post">
-                        <h2>Espaço salão de festa:
-                            <select name="espaco">
-                                <?php
-                                include "../scripts/connection.php";
+                        <?php
+                        include "../scripts/connection.php";
 
-                                $sql = "SELECT nomeespaco, id FROM natureza_viva.locais";
-                                $resultado = mysqli_query($conexao, $sql);
+                        $sql = "SELECT nomeespaco, id FROM natureza_viva.locais";
+                        $resultado = mysqli_query($conexao, $sql);
 
-                                while ($lugar = mysqli_fetch_row($resultado)) {
-                                    echo "<option value='$lugar[1]'>$lugar[0]</option>";
-                                }
-                                ?>
-                            </select>
-                        </h2>
-                        <label>Data:</label>
-                        <input type="date" name="data" required><br>
-                        <label>Hora:</label>
-                        <input type="time" name="hora" required><br>
+                        if (mysqli_num_rows($resultado) != 0) {
+                            echo "<h2>Espaço salão de festa:
+                                    <select name='espaco'>";
 
-                        <center>
-                            <button type="submit">
-                                Cadastrar
-                            </button>
+                            while ($lugar = mysqli_fetch_row($resultado)) {
+                                echo "<option value='$lugar[1]'>$lugar[0]</option>";
+                            }
+
+                            echo "</select>
+                                </h2>
+
+                                <label>Data:</label>
+                                <input type='date' name='data' required><br>
+                                <label>Hora:</label>
+                                <input type='time' name='hora' required><br>
+
+                                <center>
+                                <button type='submit'>
+                                    Cadastrar
+                                </button>";
+                        } else {
+                            echo "<h2>Nenhum espaço foi encontrado no sistema! Não será possível cadastrar nenhum horário.</h2>
+                                    <h2><a href='./register_local.php'>Clique aqui para cadastrar um espaço.</a></h2>";
+                        }
+                        ?>
                     </form>
                 </div>
             </main>
