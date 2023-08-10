@@ -29,7 +29,7 @@ session_start();
     </header>
 
     <main>
-        <h1>Locais Disponíveis:</h1><br>
+        <h1>Locais Disponíveis:</h1>
 
         <?php
         include "../scripts/connection.php";
@@ -49,21 +49,27 @@ session_start();
 
         $resultado = mysqli_query($conexao, $sql);
 
-        while ($agendamento = mysqli_fetch_row($resultado)) {
-            echo "<div class='box'>
-                        <table>
-                            <tr>
-                                <td>
-                                    <h3>$agendamento[2]: $agendamento[3]</h3>
-                                </td>
-                                <td>$agendamento[4] Nº $agendamento[5]</td>
-                            </tr>
-                            <tr>
-                                <td>Dia e Horário: $agendamento[0]  $agendamento[1]</td>
-                            </tr>
-                        </table>
-                    </div>";
+        if(mysqli_num_rows($resultado)!= 0) {
+            while ($agendamento = mysqli_fetch_row($resultado)) {
+                echo "<div class='box'>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h3>$agendamento[2]: $agendamento[3]</h3>
+                                    </td>
+                                    <td>$agendamento[4] Nº $agendamento[5]</td>
+                                </tr>
+                                <tr>
+                                    <td>Dia e Horário: $agendamento[0]  $agendamento[1]</td>
+                                </tr>
+                            </table>
+                        </div>";
+            }
+        } else {
+            echo "<center><h3>Não há nenhum horário disponível no momento!</h3></center>";
         }
+
+        
         ?>
         <br>
     </main>
