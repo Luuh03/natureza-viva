@@ -4,7 +4,7 @@ if ($_SESSION['login'] == 'admin') {
     function cadastraHorario()
     {
         include "../scripts/connection.php";
-        include "../scripts/register_time_function.php";
+        include "../scripts/function_register_time.php";
     }
     if (empty($_POST["data"])) { ?>
         <!DOCTYPE html>
