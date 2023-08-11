@@ -14,19 +14,17 @@ session_start();
 </head>
 
 <body>
-    <header>
-        <nav>
-            <ul id="menu">
-                <li><a><img src="../images/natureza_logo.png" alt="logo"></a>
-                    <ul>
-                        <li><a href="./homepage_user.php">Início</a></li>
-                        <li><a href="../scripts/logoff.php">Sair</a></li>
-                    </ul>
-                </li>
-                <li><a href="./rent_space.php">Alugar Espaço</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav>
+        <ul class="menu">
+            <li><img src="../images/natureza_logo.png" alt="logo">
+                <ul>
+                    <li><a href="./homepage_user.php">Início</a></li>
+                    <li><a href="../scripts/logoff.php">Sair</a></li>
+                </ul>
+            </li>
+            <li><a href="./rent_space.php">Alugar Espaço</a></li>
+        </ul>
+    </nav>
 
     <main>
         <h1>Olá

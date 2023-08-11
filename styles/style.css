@@ -1,3 +1,11 @@
+:root {
+    --principal: #A4E5D9;
+    --secundaria:black;
+    --ativa: #4d9d8e;
+    --botao: #FFD449;
+    --botaoativo: #F9A620;
+}
+
 body,
 html {
     margin: 0px;
