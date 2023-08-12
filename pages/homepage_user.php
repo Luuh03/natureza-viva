@@ -6,6 +6,7 @@ session_start();
 
 <head>
     <title>Página Inicial</title>
+    <link type="text/css" rel="stylesheet" href="../styles/base_page.css" />
     <link type="text/css" rel="stylesheet" href="../styles/style.css" />
     <link type="text/css" rel="stylesheet" href="../styles/style_homepage_user.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">

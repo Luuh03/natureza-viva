@@ -6,6 +6,7 @@ session_start();
 
 <head>
     <title>Alugar Espaço</title>
+    <link type="text/css" rel="stylesheet" href="../styles/base_page.css" />
     <link type="text/css" rel="stylesheet" href="../styles/style.css" />
     <link type="text/css" rel="stylesheet" href="../styles/style_homepage_user.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,19 +15,17 @@ session_start();
 </head>
 
 <body>
-    <header>
-        <nav>
-            <ul id="menu">
-                <li><a><img src="../images/natureza_logo.png" alt="logo"></a>
-                    <ul>
-                        <li><a href="./homepage_user.php">Início</a></li>
-                        <li><a href="../scripts/logoff.php">Sair</a></li>
-                    </ul>
-                </li>
-                <li><a href="./rent_space.php">Alugar Espaço</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav>
+        <ul class="menu">
+            <li><img src="../images/natureza_logo.png" alt="logo">
+                <ul>
+                    <li><a href="./homepage_user.php">Início</a></li>
+                    <li><a href="../scripts/logoff.php">Sair</a></li>
+                </ul>
+            </li>
+            <li><a href="./rent_space.php">Alugar Espaço</a></li>
+        </ul>
+    </nav>
 
     <main>
         <h1>Locais Disponíveis:</h1>
@@ -49,7 +48,7 @@ session_start();
 
         $resultado = mysqli_query($conexao, $sql);
 
-        if(mysqli_num_rows($resultado)!= 0) {
+        if (mysqli_num_rows($resultado) != 0) {
             while ($agendamento = mysqli_fetch_row($resultado)) {
                 echo "<div class='box'>
                             <table>
@@ -69,7 +68,7 @@ session_start();
             echo "<center><h3>Não há nenhum horário disponível no momento!</h3></center>";
         }
 
-        
+
         ?>
         <br>
     </main>

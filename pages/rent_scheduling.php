@@ -7,6 +7,7 @@ if ($_SESSION['login'] == 'admin') {
 
     <head>
         <title>Consultar Agendamentos</title>
+    <link type="text/css" rel="stylesheet" href="../styles/base_page.css" />
         <link type="text/css" rel="stylesheet" href="../styles/style.css" />
         <link type="text/css" rel="stylesheet" href="../styles/style_homepage_admin.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,10 +16,9 @@ if ($_SESSION['login'] == 'admin') {
     </head>
 
     <body>
-        <header>
             <nav>
-                <ul id="menu">
-                    <li><a><img src="../images/natureza_logo.png" alt="logo"></a>
+                <ul class="menu">
+                    <li><img src="../images/natureza_logo.png" alt="logo">
                         <ul>
                             <li><a href="./homepage_admin.php">Início</a></li>
                             <li><a href="../scripts/logoff.php">Sair</a></li>
@@ -30,7 +30,6 @@ if ($_SESSION['login'] == 'admin') {
                     <li><a href="./rent_scheduling.php">Consultar Agendamentos</a></li>
                 </ul>
             </nav>
-        </header>
 
         <main>
             <h1>Agendamentos:</h1><br>
