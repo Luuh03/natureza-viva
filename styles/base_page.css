@@ -1,3 +1,21 @@
+body {
+    background-color: #BDECE3;
+}
+
+main {
+    background-color: #F0FFFF;
+    margin: auto;
+    width: 70%;
+}
+
+main h1 {
+    margin-left: 5%;
+}
+
+main h2 {
+    margin-left: 10%;
+}
+
 ul, li {
     list-style: none;
     padding: 0px;
@@ -6,7 +24,6 @@ ul, li {
 
 nav {
     height: 9%;
-
 }
 
 .menu {

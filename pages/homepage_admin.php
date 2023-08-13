@@ -31,9 +31,7 @@ if ($_SESSION['login'] == 'admin') { ?>
         </nav>
 
         <main>
-            <h1>Olá
-                <?php echo $_SESSION['nome'] ?>
-            </h1><br>
+            <h1>Olá <?php echo $_SESSION['nome'] ?></h1><br>
 
             <h2>Agendamentos aguardando confirmação:</h2>
 

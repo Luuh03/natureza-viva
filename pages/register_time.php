@@ -68,7 +68,7 @@ if ($_SESSION['login'] == 'admin') {
                                     Cadastrar
                                 </button>";
                         } else {
-                            echo "<h2>Nenhum espaço foi encontrado no sistema! Não será possível cadastrar nenhum horário.</h2>
+                            echo "<h2>Nenhum espaço foi encontrado no sistema!<br>Não será possível cadastrar nenhum horário.</h2>
                                     <h2><a href='./register_local.php'>Clique aqui para cadastrar um espaço.</a></h2>";
                         }
                         ?>

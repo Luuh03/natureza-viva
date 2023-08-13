@@ -56,24 +56,31 @@ if ($_SESSION['login'] == 'admin') {
 
             $resultado = mysqli_query($conexao, $sql);
 
-            while ($requisicoes = mysqli_fetch_row($resultado)) {
-                echo "<div class='box'>
-                            <table>
-                                <tr>
-                                    <td>
-                                        <h3>$requisicoes[2]: $requisicoes[3]</h3>
-                                    </td>
-                                    <td>$requisicoes[4] Nº $requisicoes[5]</td>
-                                </tr>
-                                <tr>
-                                    <td>Dia e Horário: $requisicoes[0]  $requisicoes[1]</td>
-                                </tr>
-                                <tr>
-                                    <td>Alugado por: $requisicoes[6]</td>
-                                </tr>
-                            </table>
-                        </div>";
+            if(mysqli_num_rows($resultado) != 0) {
+                while ($requisicoes = mysqli_fetch_row($resultado)) {
+                    echo "<div class='box'>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <h3>$requisicoes[2]: $requisicoes[3]</h3>
+                                        </td>
+                                        <td>$requisicoes[4] Nº $requisicoes[5]</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dia e Horário: $requisicoes[0]  $requisicoes[1]</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Alugado por: $requisicoes[6]</td>
+                                    </tr>
+                                </table>
+                            </div>";
+                }
+            } else {
+                echo "<h2>Nenhum agendamento foi encontrado no sistema!</h2>
+                        <h2><a href='./register_time.php'>Clique aqui para cadastrar um horário.</a></h2>";
             }
+
+            
             ?>
 
             <br>
